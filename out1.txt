@@ -1,0 +1,360 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# FORMAT per a fer el test:                                         #
+# nomMetode, valorArgument1, valorArgument2, valorArgumentN         #
+# Admet String's, tipus de dades primitius i dates (java.util.Date) #
+# en format dd-MM-yyyy HH:mm:ss                                     #
+# No suporta metodes homonims amb el mateix nombre de parametres    #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+# EP2 test
+
+# ERROR
+mostActiveGroup()
+ERROR: There are no groups
+
+# ERROR
+mostActiveRepository()
+ERROR: There are no repositories
+
+# ERROR
+groups()
+ERROR: There are no groups
+
+# ERROR
+repositories()
+ERROR: There are no repositories
+
+# ERROR
+users()
+ERROR: There are no users
+
+addRepository(1, /repo1, description1)
+void
+addRepository(2, /repo2, description2)
+void
+addRepository(4, /repo4, description4)
+void
+addRepository(5, /repo5, description5)
+void
+
+repositories()
+path: /repo1
+description: description1
+activity: 0
+	no files
+
+path: /repo2
+description: description2
+activity: 0
+	no files
+
+path: /repo4
+description: description4
+activity: 0
+	no files
+
+path: /repo5
+description: description5
+activity: 0
+	no files
+
+
+getRepository(1)
+path: /repo1
+description: description1
+activity: 0
+	no files
+
+
+getRepository(4)
+path: /repo4
+description: description4
+activity: 0
+	no files
+
+
+# ERROR
+checkout(1, 333)
+ERROR: There are no files
+
+addUser(U1, joep@uoc.edu, ****)
+void
+addUser(J2, joan@uoc.edu, ****)
+void
+addUser(B3, helenap@uoc.edu, ****)
+void
+addUser(A36, marti@uoc.edu, ****)
+void
+addUser(A16, pepmarti@uoc.edu, ****)
+void
+
+users()
+A16 pepmarti@uoc.edu **** 
+
+A36 marti@uoc.edu **** 
+
+B3 helenap@uoc.edu **** 
+
+J2 joan@uoc.edu **** 
+
+U1 joep@uoc.edu **** 
+
+
+# update
+addUser(U1, josep@uoc.edu, ****)
+void
+
+users()
+A16 pepmarti@uoc.edu **** 
+
+A36 marti@uoc.edu **** 
+
+B3 helenap@uoc.edu **** 
+
+J2 joan@uoc.edu **** 
+
+U1 josep@uoc.edu **** 
+
+
+# ERROR
+
+groups()
+ERROR: There are no groups
+
+addGroup(G1, Group 1)
+void
+addGroup(G2, Group 2)
+void
+addGroup(G3, Group 3)
+void
+addGroup(G4, Group 4)
+void
+addGroup(G5, Group 5)
+void
+
+
+groups()
+G1 Group 1 activity: 0
+
+G2 Group 2 activity: 0
+
+G3 Group 3 activity: 0
+
+G4 Group 4 activity: 0
+
+G5 Group 5 activity: 0
+
+
+# ERROR
+groupAddUser(GXX, U1)
+ERROR: Group not found
+
+# ERROR
+groupAddUser(G1, UXXX)
+ERROR: User not found
+
+groupAddUser(G1, U1)
+void
+groupAddUser(G2, U1)
+void
+
+groupAddUser(G4, B3)
+void
+groupAddUser(G5, B3)
+void
+
+groupAddUser(G3, A36)
+void
+
+users()
+A16 pepmarti@uoc.edu **** 
+
+A36 marti@uoc.edu **** 
+	G3 Group 3 activity: 0
+
+B3 helenap@uoc.edu **** 
+	G4 Group 4 activity: 0
+	G5 Group 5 activity: 0
+
+J2 joan@uoc.edu **** 
+
+U1 josep@uoc.edu **** 
+	G1 Group 1 activity: 0
+	G2 Group 2 activity: 0
+
+
+repositoryAddGroup(1, G1)
+void
+repositoryAddGroup(1, G3)
+void
+
+repositoryAddGroup(2, G4)
+void
+
+repositories()
+path: /repo1
+description: description1
+activity: 0
+	no files
+	G1 Group 1 activity: 0
+	G3 Group 3 activity: 0
+
+
+path: /repo2
+description: description2
+activity: 0
+	no files
+	G4 Group 4 activity: 0
+
+
+path: /repo4
+description: description4
+activity: 0
+	no files
+
+path: /repo5
+description: description5
+activity: 0
+	no files
+
+
+# ERROR
+commit(99999, 1, U1, 14-10-2014 15:30:00, /src/HelloWorld.java, public class HelloWorld)
+ERROR: Repository not found
+
+# ERROR
+commit(1, 1, XXXXX1, 14-10-2014 15:30:00, /src/HelloWorld.java, public class HelloWorld)
+ERROR: User not found
+
+# ERROR  B3 - Repo 1
+commit(1, 1, B3, 14-10-2014 15:30:00, /src/HelloWorld.java, public class HelloWorld)
+ERROR: No privileges on this repo
+
+# ERROR  A16 - Repo 1
+commit(1, 333, A16, 14-10-2014 15:30:00, /src/HelloWorld.java, public class HelloWorld)
+ERROR: No privileges on this repo
+
+# ERROR  J2 - Repo 1
+commit(1, 333, J2, 14-10-2014 15:30:00, /src/HelloWorld.java, public class HelloWorld)
+ERROR: No privileges on this repo
+
+
+commit(1, 333, U1, 14-10-2014 15:30:00, /src/HelloWorld.java, public class HelloWorld (333))
+void
+commit(1, 333, U1, 15-10-2014 15:30:00, /src/Main.java, public class Main (333))
+void
+commit(1, 333, A36, 15-10-2014 15:30:00, /src/Test.java, public class Test (333))
+void
+commit(1, 333, A36, 15-10-2014 15:30:00, /src/ApiHelper.java, public class ApiHelper (333))
+void
+commit(1, 333, A36, 15-10-2014 15:30:00, /src/DBUtils.java, public class DBUtils (333))
+void
+
+commit(1, 334, U1, 14-10-2014 15:35:00, /src/HelloWorld.java, public class HelloWorld // msg1 (334))
+void
+commit(1, 334, U1, 15-10-2014 15:35:00, /src/Main.java, public class Main // msg1 (334))
+void
+
+commit(1, 335, U1, 14-10-2014 15:40:00, /src/HelloWorld.java, public class HelloWorld // msg2 (335))
+void
+commit(1, 335, U1, 15-10-2014 15:40:00, /src/Main.java, public class Main // msg2 (335))
+void
+
+# error
+commit(1, 333, U1, 15-10-2014 15:40:00, /src/Main.java, public class Main // msg2)
+ERROR: Revision already exists
+
+
+# Repo 2
+
+# ERROR A16 - Repo 2
+commit(2, 100, A16, 15-10-2014 15:40:00, /src/JTree.java, public class Main // msg a16)
+ERROR: No privileges on this repo
+
+# ERROR A36 - Repo 2
+commit(2, 100, A36, 15-10-2014 15:40:00, /src/JTree.java, public class Main // msg a36)
+ERROR: No privileges on this repo
+
+# ERROR U1 - Repo 2
+commit(2, 100, U1, 15-10-2014 15:40:00, /src/JTree.java, public class Main // msg u1)
+ERROR: No privileges on this repo
+
+commit(2, 100, B3, 15-10-2014 15:40:00, /src/JTree.java, public class Main // msg B3)
+void
+
+
+mostActiveRepository()
+path: /repo1
+description: description1
+activity: 9
+	filePath:/src/HelloWorld.java
+	333 public class HelloWorld (333) U1 
+	334 public class HelloWorld // msg1 (334) U1 
+	335 public class HelloWorld // msg2 (335) U1 
+	filePath:/src/Main.java
+	333 public class Main (333) U1 
+	334 public class Main // msg1 (334) U1 
+	335 public class Main // msg2 (335) U1 
+	filePath:/src/Test.java
+	333 public class Test (333) A36 
+	filePath:/src/ApiHelper.java
+	333 public class ApiHelper (333) A36 
+	filePath:/src/DBUtils.java
+	333 public class DBUtils (333) A36 
+
+	G1 Group 1 activity: 6
+	G3 Group 3 activity: 3
+
+
+mostActiveGroup()
+G1 Group 1 activity: 6
+
+
+
+# ERROR
+getFile(1, 9999, /src/Main.java)
+ERROR: Revision not found
+
+getFile(1, 333, /src/Main.java)
+333 public class Main (333) U1 
+
+getFile(1, 334, /src/Main.java)
+334 public class Main // msg1 (334) U1 
+
+getFile(1, 335, /src/Main.java)
+335 public class Main // msg2 (335) U1 
+
+getFile(1, 333, /src/HelloWorld.java)
+333 public class HelloWorld (333) U1 
+
+getFile(1, 334, /src/HelloWorld.java)
+334 public class HelloWorld // msg1 (334) U1 
+
+getFile(1, 335, /src/HelloWorld.java)
+335 public class HelloWorld // msg2 (335) U1 
+
+
+checkout(1, 333)
+333 public class HelloWorld (333) U1 
+333 public class Main (333) U1 
+333 public class Test (333) A36 
+333 public class ApiHelper (333) A36 
+333 public class DBUtils (333) A36 
+
+checkout(1, 334)
+334 public class HelloWorld // msg1 (334) U1 
+334 public class Main // msg1 (334) U1 
+333 public class Test (333) A36 
+333 public class ApiHelper (333) A36 
+333 public class DBUtils (333) A36 
+
+checkout(1, 335)
+335 public class HelloWorld // msg2 (335) U1 
+335 public class Main // msg2 (335) U1 
+333 public class Test (333) A36 
+333 public class ApiHelper (333) A36 
+333 public class DBUtils (333) A36 
+
+checkout(2, 100)
+100 public class Main // msg B3 B3 
+
