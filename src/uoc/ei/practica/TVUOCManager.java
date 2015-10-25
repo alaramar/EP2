@@ -5,7 +5,7 @@ import java.util.Date;
 import uoc.ei.tads.Iterador;
 
 /** 
- * Definició del TAD de gestió de repositoris SVN
+ * Definició del TAD de gestió de programes de TVUOC
  */
 public interface TVUOCManager {
 	
