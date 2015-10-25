@@ -10,9 +10,9 @@ public class Program {
 	private String id;
 	private String name;
 	private String description;
-	private double average;
-	private LlistaEncadenada<Integer> ratings;
-	
+	private double sumRating;
+	private int nRating;
+		
 	public static Comparator<String> PROGRAM_CMP = new Comparator<String>() {
 
 		@Override
@@ -26,8 +26,8 @@ public class Program {
 		this.id=id;
 		this.name=name;
 		this.description=description;
-		this.average = 0;
-		this.ratings = new LlistaEncadenada<Integer>();
+		this.sumRating = 0;
+		this.nRating=0;
 	}
 
 	public void inc() {
@@ -35,31 +35,18 @@ public class Program {
 	}
 
 	public void addRating(int rating) {
-		this.ratings.afegirAlFinal(rating);
+		this.sumRating+=rating;
+		this.nRating++;
 	}
 
-	public double rating() {
-		double i=0;
-		double sum =0;
-		Iterador<Integer> it = this.ratings.elements();
-		while (it.hiHaSeguent()) {
-			sum+= it.seguent();
-			i++;
-		}
-						
-		double ret =  (i!=0?sum/i:0);
+	public double rating() {						
+		double ret =  (this.nRating!=0?this.sumRating/this.nRating:0);
 		return ret;
 	}
 	
 	@Override
 	public String toString() {
-		StringBuffer sb = new StringBuffer( id + ", " + name + ", " + description+" rating("+this.rating()+"):" );
-		
-		Iterador<Integer> it = this.ratings.elements();
-		while (it.hiHaSeguent()) {
-			sb.append(it.seguent()+" ");
-		}
-	
+		StringBuffer sb = new StringBuffer( id + ", " + name + ", " + description+" views("+this.views+") rating("+this.rating()+"):");
 		return sb.toString();
 	}
 

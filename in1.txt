@@ -13,6 +13,13 @@ users
 
 addUser, U1, joep@uoc.edu, ****
 addUser, U2, joan@uoc.edu, ****
+addUser, U3, pere@uoc.edu, ****
+addUser, U4, achillar@uoc.edu, ****
+addUser, U5, sanchez@uoc.edu, ****
+addUser, U6, degana@uoc.edu, ****
+addUser, U7, alex@uoc.edu, ****
+addUser, U8, sergio@uoc.edu, ****
+
 addUser, B3, helenap@uoc.edu, ****
 addUser, A36, marti@uoc.edu, ****
 addUser, A16, pepmarti@uoc.edu, ****
@@ -84,13 +91,25 @@ registerView, CH1, P13, U1,  28-10-2015 20:00:00
 registerView, CH2, P21, U1,  29-10-2015 20:00:00
 registerView, CH2, P23, U1,  30-10-2015 20:00:00
 registerView, CH2, P22, U1,  04-11-2015 19:00:00
-registerView, CH3, P31, U1,  16-11-2015 21:00:00
-registerView, CH3, P33, U1,  20-11-2015 20:00:00
-registerView, CH3, P32, U1,  26-11-2015 22:00:00
 
 registerView, CH1, P11, U2,  28-10-2015 20:00:00
 registerView, CH1, P12, U2,  29-10-2015 20:20:00
 registerView, CH1, P13, U2,  30-10-2015 21:00:00
+
+registerView, CH1, P13, U4,  28-10-2015 20:00:00
+registerView, CH1, P13, U5,  29-10-2015 20:20:00
+registerView, CH1, P13, U6,  30-10-2015 21:00:00
+
+registerView, CH2, P23, U4,  28-10-2015 20:00:00
+registerView, CH2, P23, U5,  29-10-2015 20:20:00
+registerView, CH2, P23, U6,  30-10-2015 21:00:00
+registerView, CH2, P23, U7,  30-10-2015 21:00:00
+registerView, CH2, P23, U8,  30-10-2015 21:00:00
+
+registerView, CH1, P11, U7,  30-10-2015 21:00:00
+registerView, CH1, P11, U8,  30-10-2015 21:00:00
+
+registerView, CH2, P21, U7,  30-10-2015 21:00:00
 
 getUserViews, U1
 
@@ -125,8 +144,8 @@ rateProgram, CH2, P22, 1
 rateProgram, CH2, P23, 2
 
 programs, CH1
-programs, CH2
 
+programs, CH2
 
 getTop10Programs
 

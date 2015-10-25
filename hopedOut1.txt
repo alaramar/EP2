@@ -9,800 +9,248 @@
 # EP2 test
 
 # ERROR
-mostActiveUser()
-ERROR: There are no users
-
-# ERROR
-mostActiveStation()
-ERROR: There are no stations
-
-# ERROR
-stations()
-ERROR: There are no stations
-
-addStation(STATION1, 3, 4, 1000)
-void
-addStation(STATION2, 200, 500, 5)
-void
-addStation(STATION3, 444, 324, 7)
-void
-addStation(STATION4, 111, 322, 8)
-void
-
-stations()
-id: STATION1
-latitude: 3
-longitude: 4
-nParkings: 1000
-bicycles: 0
-
-id: STATION2
-latitude: 200
-longitude: 500
-nParkings: 5
-bicycles: 0
-
-id: STATION3
-latitude: 444
-longitude: 324
-nParkings: 7
-bicycles: 0
-
-id: STATION4
-latitude: 111
-longitude: 322
-nParkings: 8
-bicycles: 0
-
-
-addStation(STATION1, 333, 444, 10)
-void
-
-stations()
-id: STATION1
-latitude: 333
-longitude: 444
-nParkings: 10
-bicycles: 0
-
-id: STATION2
-latitude: 200
-longitude: 500
-nParkings: 5
-bicycles: 0
-
-id: STATION3
-latitude: 444
-longitude: 324
-nParkings: 7
-bicycles: 0
-
-id: STATION4
-latitude: 111
-longitude: 322
-nParkings: 8
-bicycles: 0
-
-
-#ERROR
-bicycles()
-ERROR: There are no bicycles
-
-#ERROR
-bicyclesByStation(STATION1)
-ERROR: There are no bicycles
-
-#ERROR
-addBicycle(B11, M1, XXXX)
-ERROR: Station not found
-
-addBicycle(B11, M1, STATION1)
-void
-
-#ERROR
-addBicycle(B11, M1, STATION1)
-ERROR: Bicycle already exists
-
-addBicycle(B12, M2, STATION1)
-void
-addBicycle(B13, M2, STATION1)
-void
-addBicycle(B14, M1, STATION1)
-void
-addBicycle(B15, M1, STATION1)
-void
-addBicycle(B16, M2, STATION1)
-void
-addBicycle(B17, M2, STATION1)
-void
-addBicycle(B18, M2, STATION1)
-void
-addBicycle(B19, M2, STATION1)
-void
-addBicycle(B100, M2, STATION1)
-void
-
-#ERROR
-addBicycle(B100000, M2, STATION1)
-ERROR: Maximun number of bicycles
-
-bicycles()
-id: B100
-model: M2
-time of use: 0 hours
-
-id: B11
-model: M1
-time of use: 0 hours
-
-id: B12
-model: M2
-time of use: 0 hours
-
-id: B13
-model: M2
-time of use: 0 hours
-
-id: B14
-model: M1
-time of use: 0 hours
-
-id: B15
-model: M1
-time of use: 0 hours
-
-id: B16
-model: M2
-time of use: 0 hours
-
-id: B17
-model: M2
-time of use: 0 hours
-
-id: B18
-model: M2
-time of use: 0 hours
-
-id: B19
-model: M2
-time of use: 0 hours
-
-
-addBicycle(B21, M1, STATION2)
-void
-addBicycle(B22, M2, STATION2)
-void
-addBicycle(B23, M2, STATION2)
-void
-addBicycle(B24, M1, STATION2)
-void
-addBicycle(B25, M1, STATION2)
-void
-
-# ERROR
-addBicycle(B26, M2, STATION2)
-ERROR: Maximun number of bicycles
-
-bicycles()
-id: B100
-model: M2
-time of use: 0 hours
-
-id: B11
-model: M1
-time of use: 0 hours
-
-id: B12
-model: M2
-time of use: 0 hours
-
-id: B13
-model: M2
-time of use: 0 hours
-
-id: B14
-model: M1
-time of use: 0 hours
-
-id: B15
-model: M1
-time of use: 0 hours
-
-id: B16
-model: M2
-time of use: 0 hours
-
-id: B17
-model: M2
-time of use: 0 hours
-
-id: B18
-model: M2
-time of use: 0 hours
-
-id: B19
-model: M2
-time of use: 0 hours
-
-id: B21
-model: M1
-time of use: 0 hours
-
-id: B22
-model: M2
-time of use: 0 hours
-
-id: B23
-model: M2
-time of use: 0 hours
-
-id: B24
-model: M1
-time of use: 0 hours
-
-id: B25
-model: M1
-time of use: 0 hours
-
-bicyclesByStation(STATION1)
-id: B18
-model: M2
-time of use: 0 hours
-
-id: B14
-model: M1
-time of use: 0 hours
-
-id: B19
-model: M2
-time of use: 0 hours
-
-id: B12
-model: M2
-time of use: 0 hours
-
-id: B100
-model: M2
-time of use: 0 hours
-
-id: B15
-model: M1
-time of use: 0 hours
-
-id: B11
-model: M1
-time of use: 0 hours
-
-id: B16
-model: M2
-time of use: 0 hours
-
-id: B13
-model: M2
-time of use: 0 hours
-
-id: B17
-model: M2
-time of use: 0 hours
-
-bicyclesByStation(STATION2)
-id: B24
-model: M1
-time of use: 0 hours
-
-id: B22
-model: M2
-time of use: 0 hours
-
-id: B25
-model: M1
-time of use: 0 hours
-
-id: B21
-model: M1
-time of use: 0 hours
-
-id: B23
-model: M2
-time of use: 0 hours
-
-
-# ERROR
-
 users()
 ERROR: There are no users
 
-addUser(1111, Juan)
+addUser(U1, joep@uoc.edu, ****)
 void
-addUser(2222, Peter)
+addUser(U2, joan@uoc.edu, ****)
 void
-addUser(3333, Sonia)
+addUser(B3, helenap@uoc.edu, ****)
 void
-addUser(4444, Marc)
+addUser(A36, marti@uoc.edu, ****)
 void
-addUser(5555, Joan)
-void
-addUser(6666, Mariano)
-void
-addUser(7777, Sebastià)
-void
-addUser(8888, Josep)
+addUser(A16, pepmarti@uoc.edu, ****)
 void
 
 users()
-id: 1111
-name: Juan
+A16 pepmarti@uoc.edu **** 
 
-id: 2222
-name: Peter
+A36 marti@uoc.edu **** 
 
-id: 3333
-name: Sonia
+B3 helenap@uoc.edu **** 
 
-id: 4444
-name: Marc
+U2 joan@uoc.edu **** 
 
-id: 5555
-name: Joan
+U1 joep@uoc.edu **** 
 
-id: 6666
-name: Mariano
 
-id: 7777
-name: Sebastià
+# update
+addUser(U1, josep@uoc.edu, ****)
+void
 
-id: 8888
-name: Josep
+users()
+A16 pepmarti@uoc.edu **** 
+
+A36 marti@uoc.edu **** 
+
+B3 helenap@uoc.edu **** 
+
+U2 joan@uoc.edu **** 
+
+U1 josep@uoc.edu **** 
 
 
 # ERROR
-getBicycle(xxxx, STATION1, 20-10-2013 10:00:00)
+channels()
+ERROR: There are no channels
+
+addChannel(CH1, Physics, description1)
+void
+
+addChannel(CH2, Chemistry, description2)
+void
+addChannel(CH3, Maths, description3)
+void
+addChannel(CH4, Arts, description4)
+void
+addChannel(CH5, Computer & Science, description5)
+void
+addChannel(CH6, Physics, description6)
+void
+
+channels()
+CH1, Physics, description1
+CH2, Chemistry, description2
+CH3, Maths, description3
+CH4, Arts, description4
+CH5, Computer & Science, description5
+CH6, Physics, description6
+
+# ERROR
+programs(CH1)
+ERROR: There are no programs
+# ERROR
+programs(CH2)
+ERROR: There are no programs
+# ERROR
+programs(CH3)
+ERROR: There are no programs
+
+addProgram(P12, The Last Magician, description2, CH1)
+void
+addProgram(P13, Newton's Third Law, description3, CH1)
+void
+addProgram(P11, Discovering the work of Isaac Newton, description1, CH1)
+void
+
+addProgram(P22, The mole, description2, CH2)
+void
+addProgram(P23, Chemistry for the Biosciences, description3, CH2)
+void
+addProgram(P21, Fundamental ideas in chemistry, description1, CH2)
+void
+
+addProgram(P32, Diego Velázquez: Las Meninas, description2, CH3)
+void
+addProgram(P33, Da Vinci: The Lost Treasure, description3, CH3)
+void
+addProgram(P31, Pablo Picasso paintings, description1, CH3)
+void
+
+#ERROR
+programs(CHX)
+ERROR: Channel not found
+
+programs(CH1)
+P11, Discovering the work of Isaac Newton, description1 rating(0.0):
+P12, The Last Magician, description2 rating(0.0):
+P13, Newton's Third Law, description3 rating(0.0):
+
+programs(CH2)
+P21, Fundamental ideas in chemistry, description1 rating(0.0):
+P22, The mole, description2 rating(0.0):
+P23, Chemistry for the Biosciences, description3 rating(0.0):
+
+programs(CH3)
+P31, Pablo Picasso paintings, description1 rating(0.0):
+P32, Diego Velázquez: Las Meninas, description2 rating(0.0):
+P33, Da Vinci: The Lost Treasure, description3 rating(0.0):
+
+#ERROR
+programs(CH4)
+ERROR: There are no programs
+
+
+#ERROR
+registerView(CHX, P11, U1, 26-10-2015 20:00:00)
+ERROR: Channel not found
+
+#ERROR
+registerView(CH1, PX, U1, 26-10-2015 20:00:00)
+ERROR: Program not found
+
+#ERROR
+registerView(CH1, P11, UX, 26-10-2015 20:00:00)
 ERROR: User not found
 
-# ERROR
-getBicycle(1111, xxxx, 20-10-2013 10:00:00)
-ERROR: Station not found
-
-getBicycle(1111, STATION1, 20-10-2013 10:00:00)
-id: B11
-model: M1
-time of use: 0 hours
-Running
-
-
-# ERROR
-getBicycle(1111, STATION2, 20-10-2013 11:00:00)
-ERROR: User is busy
-
-# ERROR
-returnBicycle(B11, STATION2, 20-10-2013 10:30:00)
-ERROR: Maximun number of bicycles
-
-returnBicycle(B11, STATION3, 20-10-2013 10:30:00)
+registerView(CH1, P11, U1, 26-10-2015 20:00:00)
+void
+registerView(CH1, P12, U1, 27-10-2015 20:00:00)
+void
+registerView(CH1, P13, U1, 28-10-2015 20:00:00)
+void
+registerView(CH2, P21, U1, 29-10-2015 20:00:00)
+void
+registerView(CH2, P23, U1, 30-10-2015 20:00:00)
+void
+registerView(CH2, P22, U1, 04-11-2015 19:00:00)
+void
+registerView(CH3, P31, U1, 16-11-2015 21:00:00)
+void
+registerView(CH3, P33, U1, 20-11-2015 20:00:00)
+void
+registerView(CH3, P32, U1, 26-11-2015 22:00:00)
 void
 
-bicyclesByStation(STATION1)
-id: B18
-model: M2
-time of use: 0 hours
-
-id: B14
-model: M1
-time of use: 0 hours
-
-id: B19
-model: M2
-time of use: 0 hours
-
-id: B12
-model: M2
-time of use: 0 hours
-
-id: B15
-model: M1
-time of use: 0 hours
-
-id: B100
-model: M2
-time of use: 0 hours
-
-id: B16
-model: M2
-time of use: 0 hours
-
-id: B13
-model: M2
-time of use: 0 hours
-
-id: B17
-model: M2
-time of use: 0 hours
-
-bicyclesByStation(STATION2)
-id: B24
-model: M1
-time of use: 0 hours
-
-id: B22
-model: M2
-time of use: 0 hours
-
-id: B25
-model: M1
-time of use: 0 hours
-
-id: B21
-model: M1
-time of use: 0 hours
-
-id: B23
-model: M2
-time of use: 0 hours
-
-bicyclesByStation(STATION3)
-id: B11
-model: M1
-time of use: 0 hours (timeMilis: 1800000) 
-
-
-getBicycle(1111, STATION2, 21-10-2013 10:00:00)
-id: B21
-model: M1
-time of use: 0 hours
-Running
-
-getBicycle(2222, STATION2, 21-10-2013 10:00:00)
-id: B25
-model: M1
-time of use: 0 hours
-Running
-
-getBicycle(3333, STATION2, 21-10-2013 10:00:00)
-id: B24
-model: M1
-time of use: 0 hours
-Running
-
-getBicycle(4444, STATION2, 21-10-2013 10:00:00)
-id: B23
-model: M2
-time of use: 0 hours
-Running
-
-getBicycle(5555, STATION2, 21-10-2013 10:00:00)
-id: B22
-model: M2
-time of use: 0 hours
-Running
-
-
-# ERROR
-getBicycle(6666, STATION2, 21-10-2013 10:00:00)
-ERROR: There are no bicycles
-
-bicyclesByStation(STATION1)
-id: B18
-model: M2
-time of use: 0 hours
-
-id: B14
-model: M1
-time of use: 0 hours
-
-id: B19
-model: M2
-time of use: 0 hours
-
-id: B12
-model: M2
-time of use: 0 hours
-
-id: B15
-model: M1
-time of use: 0 hours
-
-id: B100
-model: M2
-time of use: 0 hours
-
-id: B16
-model: M2
-time of use: 0 hours
-
-id: B13
-model: M2
-time of use: 0 hours
-
-id: B17
-model: M2
-time of use: 0 hours
-
-
-bicyclesByStation(STATION2)
-ERROR: There are no bicycles
-
-bicyclesByStation(STATION3)
-id: B11
-model: M1
-time of use: 0 hours (timeMilis: 1800000) 
-
-
-returnBicycle(B21, STATION4, 21-10-2013 11:30:00)
+registerView(CH1, P11, U2, 28-10-2015 20:00:00)
 void
-returnBicycle(B22, STATION4, 21-10-2013 12:30:00)
+registerView(CH1, P12, U2, 29-10-2015 20:20:00)
 void
-returnBicycle(B23, STATION4, 21-10-2013 14:30:00)
-void
-returnBicycle(B24, STATION4, 21-10-2013 11:30:00)
-void
-returnBicycle(B25, STATION4, 21-10-2013 11:30:00)
+registerView(CH1, P13, U2, 30-10-2015 21:00:00)
 void
 
-bicyclesByStation(STATION1)
-id: B18
-model: M2
-time of use: 0 hours
+getUserViews(U1)
+P11, Discovering the work of Isaac Newton, description1, views(2)
+P12, The Last Magician, description2, views(2)
+P13, Newton's Third Law, description3, views(2)
+P21, Fundamental ideas in chemistry, description1, views(1)
+P23, Chemistry for the Biosciences, description3, views(1)
+P22, The mole, description2, views(1)
+P31, Pablo Picasso paintings, description1, views(1)
+P33, Da Vinci: The Lost Treasure, description3, views(1)
+P32, Diego Velázquez: Las Meninas, description2, views(1)
 
-id: B14
-model: M1
-time of use: 0 hours
+getUserViews(U2)
+P11, Discovering the work of Isaac Newton, description1, views(2)
+P12, The Last Magician, description2, views(2)
+P13, Newton's Third Law, description3, views(2)
 
-id: B19
-model: M2
-time of use: 0 hours
+rateProgram(CH1, P13, 5)
+void
+rateProgram(CH1, P13, 5)
+void
+rateProgram(CH1, P13, 5)
+void
+rateProgram(CH1, P13, 5)
+void
+program(CH1, P13)
+P13, Newton's Third Law, description3 rating(5.0):
 
-id: B12
-model: M2
-time of use: 0 hours
-
-id: B15
-model: M1
-time of use: 0 hours
-
-id: B100
-model: M2
-time of use: 0 hours
-
-id: B16
-model: M2
-time of use: 0 hours
-
-id: B13
-model: M2
-time of use: 0 hours
-
-id: B17
-model: M2
-time of use: 0 hours
-
-
-bicyclesByStation(STATION2)
-ERROR: There are no bicycles
-
-bicyclesByStation(STATION3)
-id: B11
-model: M1
-time of use: 0 hours (timeMilis: 1800000) 
-
-
-bicyclesByStation(STATION4)
-id: B21
-model: M1
-time of use: 1 hours (timeMilis: 5400000) 
-
-id: B24
-model: M1
-time of use: 1 hours (timeMilis: 5400000) 
-
-id: B23
-model: M2
-time of use: 4 hours (timeMilis: 16200000) 
-
-id: B25
-model: M1
-time of use: 1 hours (timeMilis: 5400000) 
-
-id: B22
-model: M2
-time of use: 2 hours (timeMilis: 9000000) 
-
-
-# ERROR
-servicesByBicycle(XXX)
-ERROR: Bicycle not found
-
-servicesByBicycle(B11)
-user: Juan (1111) 
-from: STATION1
-to: STATION3
-startTime: 20-10-2013 10:10:00
-endTime: 20-10-2013 10:10:00
-
-
-servicesByBicycle(B22)
-user: Joan (5555) 
-from: STATION2
-to: STATION4
-startTime: 21-10-2013 10:10:00
-endTime: 21-10-2013 12:10:00
-
-
-servicesByBicycle(B23)
-user: Marc (4444) 
-from: STATION2
-to: STATION4
-startTime: 21-10-2013 10:10:00
-endTime: 21-10-2013 02:10:00
-
-
-getBicycle(1111, STATION3, 22-10-2013 10:00:00)
-id: B11
-model: M1
-time of use: 0 hours (timeMilis: 1800000) 
-Running
-
-
-bicyclesByStation(STATION1)
-id: B18
-model: M2
-time of use: 0 hours
-
-id: B14
-model: M1
-time of use: 0 hours
-
-id: B19
-model: M2
-time of use: 0 hours
-
-id: B12
-model: M2
-time of use: 0 hours
-
-id: B15
-model: M1
-time of use: 0 hours
-
-id: B100
-model: M2
-time of use: 0 hours
-
-id: B16
-model: M2
-time of use: 0 hours
-
-id: B13
-model: M2
-time of use: 0 hours
-
-id: B17
-model: M2
-time of use: 0 hours
-
-
-bicyclesByStation(STATION2)
-ERROR: There are no bicycles
-
-bicyclesByStation(STATION3)
-ERROR: There are no bicycles
-
-bicyclesByStation(STATION4)
-id: B21
-model: M1
-time of use: 1 hours (timeMilis: 5400000) 
-
-id: B24
-model: M1
-time of use: 1 hours (timeMilis: 5400000) 
-
-id: B23
-model: M2
-time of use: 4 hours (timeMilis: 16200000) 
-
-id: B25
-model: M1
-time of use: 1 hours (timeMilis: 5400000) 
-
-id: B22
-model: M2
-time of use: 2 hours (timeMilis: 9000000) 
-
-
-returnBicycle(B11, STATION2, 22-10-2013 13:30:00)
+rateProgram(CH1, P11, 5)
 void
 
-bicyclesByStation(STATION1)
-id: B18
-model: M2
-time of use: 0 hours
+program(CH1, P11)
+P11, Discovering the work of Isaac Newton, description1 rating(5.0):
 
-id: B14
-model: M1
-time of use: 0 hours
+rateProgram(CH1, P11, 0)
+void
+program(CH1, P11)
+P11, Discovering the work of Isaac Newton, description1 rating(2.5):
 
-id: B19
-model: M2
-time of use: 0 hours
+rateProgram(CH1, P11, 1)
+void
+program(CH1, P11)
+P11, Discovering the work of Isaac Newton, description1 rating(2.0):
 
-id: B12
-model: M2
-time of use: 0 hours
+rateProgram(CH1, P11, 1)
+void
+program(CH1, P11)
+P11, Discovering the work of Isaac Newton, description1 rating(1.75):
 
-id: B15
-model: M1
-time of use: 0 hours
+rateProgram(CH1, P11, 2)
+void
+program(CH1, P11)
+P11, Discovering the work of Isaac Newton, description1 rating(1.8):
 
-id: B100
-model: M2
-time of use: 0 hours
+topRating()
+P13, Newton's Third Law, description3 rating(5.0):
 
-id: B16
-model: M2
-time of use: 0 hours
+rateProgram(CH2, P21, 4)
+void
+rateProgram(CH2, P22, 1)
+void
+rateProgram(CH2, P23, 2)
+void
 
-id: B13
-model: M2
-time of use: 0 hours
-
-id: B17
-model: M2
-time of use: 0 hours
-
-
-bicyclesByStation(STATION2)
-id: B11
-model: M1
-time of use: 4 hours (timeMilis: 14400000) 
-
-
-bicyclesByStation(STATION3)
-ERROR: There are no bicycles
-
-bicyclesByStation(STATION4)
-id: B21
-model: M1
-time of use: 1 hours (timeMilis: 5400000) 
-
-id: B24
-model: M1
-time of use: 1 hours (timeMilis: 5400000) 
-
-id: B23
-model: M2
-time of use: 4 hours (timeMilis: 16200000) 
-
-id: B25
-model: M1
-time of use: 1 hours (timeMilis: 5400000) 
-
-id: B22
-model: M2
-time of use: 2 hours (timeMilis: 9000000) 
+programs(CH1)
+P11, Discovering the work of Isaac Newton, description1 rating(1.8):
+P12, The Last Magician, description2 rating(0.0):
+P13, Newton's Third Law, description3 rating(5.0):
+programs(CH2)
+P21, Fundamental ideas in chemistry, description1 rating(4.0):
+P22, The mole, description2 rating(1.0):
+P23, Chemistry for the Biosciences, description3 rating(2.0):
 
 
-servicesByBicycle(B11)
-user: Juan (1111) 
-from: STATION1
-to: STATION3
-startTime: 20-10-2013 10:10:00
-endTime: 20-10-2013 10:10:00
+getTop10Programs()
+P13, Newton's Third Law, description3 rating(5.0):
+P21, Fundamental ideas in chemistry, description1 rating(4.0):
+P23, Chemistry for the Biosciences, description3 rating(2.0):
+P11, Discovering the work of Isaac Newton, description1 rating(1.8):
+P22, The mole, description2 rating(1.0):
 
-user: Juan (1111) 
-from: STATION3
-to: STATION2
-startTime: 22-10-2013 10:10:00
-endTime: 22-10-2013 01:10:00
-
-
-mostActiveUser()
-id: 1111
-name: Juan
-
-
-mostActiveStation()
-id: STATION2
-latitude: 200
-longitude: 500
-nParkings: 5
-bicycles: 1
-
+getChannelTop10Programs(CH2)
+P21, Fundamental ideas in chemistry, description1 rating(4.0):
+P23, Chemistry for the Biosciences, description3 rating(2.0):
+P22, The mole, description2 rating(1.0):

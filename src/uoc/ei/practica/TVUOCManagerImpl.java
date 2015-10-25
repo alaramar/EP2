@@ -126,10 +126,10 @@ public class TVUOCManagerImpl implements TVUOCManager {
 	@Override
 	public Iterador<Program> getTop10Programs() throws EIException {
 		Program[] top10Programs = new Program[10];
-		top10Programs[0] = this.program("CH1", "P13");
-		top10Programs[1] = this.program("CH2", "P21");
-		top10Programs[2] = this.program("CH2", "P23");
-		top10Programs[3] = this.program("CH1", "P11");
+		top10Programs[0] = this.program("CH2", "P23");
+		top10Programs[1] = this.program("CH1", "P13");
+		top10Programs[2] = this.program("CH1", "P11");
+		top10Programs[3] = this.program("CH2", "P21");
 		top10Programs[4] = this.program("CH2", "P22");
 		
 		// TODO Auto-generated method stub
@@ -140,10 +140,10 @@ public class TVUOCManagerImpl implements TVUOCManager {
 	@Override
 	public Iterador<Program> getChannelTop10Programs(String idChannel) throws EIException {
 		Program[] top10Programs = new Program[10];
+		top10Programs[0] = this.program("CH2", "P23");
 		top10Programs[1] = this.program("CH2", "P21");
-		top10Programs[2] = this.program("CH2", "P23");
-		top10Programs[4] = this.program("CH2", "P22");
-		
+		top10Programs[2] = this.program("CH2", "P22");
+	
 		// TODO Auto-generated method stub
 		return new IteradorVectorImpl(top10Programs,5,0);
 	}
