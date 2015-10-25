@@ -195,36 +195,36 @@ void
 rateProgram(CH1, P13, 5)
 void
 program(CH1, P13)
-P13, Newton's Third Law, description3 rating(5.0):5 5 5 5 
+P13, Newton's Third Law, description3 rating(5.0):
 
 rateProgram(CH1, P11, 5)
 void
 
 program(CH1, P11)
-P11, Discovering the work of Isaac Newton, description1 rating(5.0):5 
+P11, Discovering the work of Isaac Newton, description1 rating(5.0):
 
 rateProgram(CH1, P11, 0)
 void
 program(CH1, P11)
-P11, Discovering the work of Isaac Newton, description1 rating(2.5):5 0 
+P11, Discovering the work of Isaac Newton, description1 rating(2.5):
 
 rateProgram(CH1, P11, 1)
 void
 program(CH1, P11)
-P11, Discovering the work of Isaac Newton, description1 rating(2.0):5 0 1 
+P11, Discovering the work of Isaac Newton, description1 rating(2.0):
 
 rateProgram(CH1, P11, 1)
 void
 program(CH1, P11)
-P11, Discovering the work of Isaac Newton, description1 rating(1.75):5 0 1 1 
+P11, Discovering the work of Isaac Newton, description1 rating(1.75):
 
 rateProgram(CH1, P11, 2)
 void
 program(CH1, P11)
-P11, Discovering the work of Isaac Newton, description1 rating(1.8):5 0 1 1 2 
+P11, Discovering the work of Isaac Newton, description1 rating(1.8):
 
 topRating()
-P13, Newton's Third Law, description3 rating(5.0):5 5 5 5 
+P13, Newton's Third Law, description3 rating(5.0):
 
 rateProgram(CH2, P21, 4)
 void
@@ -234,23 +234,23 @@ rateProgram(CH2, P23, 2)
 void
 
 programs(CH1)
-P11, Discovering the work of Isaac Newton, description1 rating(1.8):5 0 1 1 2 
+P11, Discovering the work of Isaac Newton, description1 rating(1.8):
 P12, The Last Magician, description2 rating(0.0):
-P13, Newton's Third Law, description3 rating(5.0):5 5 5 5 
+P13, Newton's Third Law, description3 rating(5.0):
 programs(CH2)
-P21, Fundamental ideas in chemistry, description1 rating(4.0):4 
-P22, The mole, description2 rating(1.0):1 
-P23, Chemistry for the Biosciences, description3 rating(2.0):2 
+P21, Fundamental ideas in chemistry, description1 rating(4.0):
+P22, The mole, description2 rating(1.0):
+P23, Chemistry for the Biosciences, description3 rating(2.0):
 
 
 getTop10Programs()
-P13, Newton's Third Law, description3 rating(5.0):5 5 5 5 
-P21, Fundamental ideas in chemistry, description1 rating(4.0):4 
-P23, Chemistry for the Biosciences, description3 rating(2.0):2 
-P11, Discovering the work of Isaac Newton, description1 rating(1.8):5 0 1 1 2 
-P22, The mole, description2 rating(1.0):1 
+P13, Newton's Third Law, description3 rating(5.0):
+P21, Fundamental ideas in chemistry, description1 rating(4.0):
+P23, Chemistry for the Biosciences, description3 rating(2.0):
+P11, Discovering the work of Isaac Newton, description1 rating(1.8):
+P22, The mole, description2 rating(1.0):
 
 getChannelTop10Programs(CH2)
-P21, Fundamental ideas in chemistry, description1 rating(4.0):4 
-P23, Chemistry for the Biosciences, description3 rating(2.0):2 
-P22, The mole, description2 rating(1.0):1 
+P21, Fundamental ideas in chemistry, description1 rating(4.0):
+P23, Chemistry for the Biosciences, description3 rating(2.0):
+P22, The mole, description2 rating(1.0):
