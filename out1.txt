@@ -9,77 +9,12 @@
 # EP2 test
 
 # ERROR
-mostActiveGroup()
-ERROR: There are no groups
-
-# ERROR
-mostActiveRepository()
-ERROR: There are no repositories
-
-# ERROR
-groups()
-ERROR: There are no groups
-
-# ERROR
-repositories()
-ERROR: There are no repositories
-
-# ERROR
 users()
 ERROR: There are no users
 
-addRepository(1, /repo1, description1)
-void
-addRepository(2, /repo2, description2)
-void
-addRepository(4, /repo4, description4)
-void
-addRepository(5, /repo5, description5)
-void
-
-repositories()
-path: /repo1
-description: description1
-activity: 0
-	no files
-
-path: /repo2
-description: description2
-activity: 0
-	no files
-
-path: /repo4
-description: description4
-activity: 0
-	no files
-
-path: /repo5
-description: description5
-activity: 0
-	no files
-
-
-getRepository(1)
-path: /repo1
-description: description1
-activity: 0
-	no files
-
-
-getRepository(4)
-path: /repo4
-description: description4
-activity: 0
-	no files
-
-
-# ERROR
-checkout(1, 333)
-ERROR: There are no files
-
 addUser(U1, joep@uoc.edu, ****)
 void
-addUser(J2, joan@uoc.edu, ****)
+addUser(U2, joan@uoc.edu, ****)
 void
 addUser(B3, helenap@uoc.edu, ****)
 void
@@ -95,7 +30,7 @@ A36 marti@uoc.edu ****
 
 B3 helenap@uoc.edu **** 
 
-J2 joan@uoc.edu **** 
+U2 joan@uoc.edu **** 
 
 U1 joep@uoc.edu **** 
 
@@ -111,250 +46,211 @@ A36 marti@uoc.edu ****
 
 B3 helenap@uoc.edu **** 
 
-J2 joan@uoc.edu **** 
+U2 joan@uoc.edu **** 
 
 U1 josep@uoc.edu **** 
 
 
 # ERROR
+channels()
+ERROR: There are no channels
 
-groups()
-ERROR: There are no groups
-
-addGroup(G1, Group 1)
-void
-addGroup(G2, Group 2)
-void
-addGroup(G3, Group 3)
-void
-addGroup(G4, Group 4)
-void
-addGroup(G5, Group 5)
+addChannel(CH1, Physics, description1)
 void
 
+addChannel(CH2, Chemistry, description2)
+void
+addChannel(CH3, Maths, description3)
+void
+addChannel(CH4, Arts, description4)
+void
+addChannel(CH5, Computer & Science, description5)
+void
+addChannel(CH6, Physics, description6)
+void
 
-groups()
-G1 Group 1 activity: 0
-
-G2 Group 2 activity: 0
-
-G3 Group 3 activity: 0
-
-G4 Group 4 activity: 0
-
-G5 Group 5 activity: 0
-
+channels()
+CH1, Physics, description1
+CH2, Chemistry, description2
+CH3, Maths, description3
+CH4, Arts, description4
+CH5, Computer & Science, description5
+CH6, Physics, description6
 
 # ERROR
-groupAddUser(GXX, U1)
-ERROR: Group not found
-
+programs(CH1)
+ERROR: There are no programs
 # ERROR
-groupAddUser(G1, UXXX)
+programs(CH2)
+ERROR: There are no programs
+# ERROR
+programs(CH3)
+ERROR: There are no programs
+
+addProgram(P12, The Last Magician, description2, CH1)
+void
+addProgram(P13, Newton's Third Law, description3, CH1)
+void
+addProgram(P11, Discovering the work of Isaac Newton, description1, CH1)
+void
+
+addProgram(P22, The mole, description2, CH2)
+void
+addProgram(P23, Chemistry for the Biosciences, description3, CH2)
+void
+addProgram(P21, Fundamental ideas in chemistry, description1, CH2)
+void
+
+addProgram(P32, Diego Velázquez: Las Meninas, description2, CH3)
+void
+addProgram(P33, Da Vinci: The Lost Treasure, description3, CH3)
+void
+addProgram(P31, Pablo Picasso paintings, description1, CH3)
+void
+
+#ERROR
+programs(CHX)
+ERROR: Channel not found
+
+programs(CH1)
+P11, Discovering the work of Isaac Newton, description1 rating(0.0):
+P12, The Last Magician, description2 rating(0.0):
+P13, Newton's Third Law, description3 rating(0.0):
+
+programs(CH2)
+P21, Fundamental ideas in chemistry, description1 rating(0.0):
+P22, The mole, description2 rating(0.0):
+P23, Chemistry for the Biosciences, description3 rating(0.0):
+
+programs(CH3)
+P31, Pablo Picasso paintings, description1 rating(0.0):
+P32, Diego Velázquez: Las Meninas, description2 rating(0.0):
+P33, Da Vinci: The Lost Treasure, description3 rating(0.0):
+
+#ERROR
+programs(CH4)
+ERROR: There are no programs
+
+
+#ERROR
+registerView(CHX, P11, U1, 26-10-2015 20:00:00)
+ERROR: Channel not found
+
+#ERROR
+registerView(CH1, PX, U1, 26-10-2015 20:00:00)
+ERROR: Program not found
+
+#ERROR
+registerView(CH1, P11, UX, 26-10-2015 20:00:00)
 ERROR: User not found
 
-groupAddUser(G1, U1)
+registerView(CH1, P11, U1, 26-10-2015 20:00:00)
 void
-groupAddUser(G2, U1)
+registerView(CH1, P12, U1, 27-10-2015 20:00:00)
 void
-
-groupAddUser(G4, B3)
+registerView(CH1, P13, U1, 28-10-2015 20:00:00)
 void
-groupAddUser(G5, B3)
+registerView(CH2, P21, U1, 29-10-2015 20:00:00)
 void
-
-groupAddUser(G3, A36)
+registerView(CH2, P23, U1, 30-10-2015 20:00:00)
 void
-
-users()
-A16 pepmarti@uoc.edu **** 
-
-A36 marti@uoc.edu **** 
-	G3 Group 3 activity: 0
-
-B3 helenap@uoc.edu **** 
-	G4 Group 4 activity: 0
-	G5 Group 5 activity: 0
-
-J2 joan@uoc.edu **** 
-
-U1 josep@uoc.edu **** 
-	G1 Group 1 activity: 0
-	G2 Group 2 activity: 0
-
-
-repositoryAddGroup(1, G1)
+registerView(CH2, P22, U1, 04-11-2015 19:00:00)
 void
-repositoryAddGroup(1, G3)
+registerView(CH3, P31, U1, 16-11-2015 21:00:00)
+void
+registerView(CH3, P33, U1, 20-11-2015 20:00:00)
+void
+registerView(CH3, P32, U1, 26-11-2015 22:00:00)
 void
 
-repositoryAddGroup(2, G4)
+registerView(CH1, P11, U2, 28-10-2015 20:00:00)
+void
+registerView(CH1, P12, U2, 29-10-2015 20:20:00)
+void
+registerView(CH1, P13, U2, 30-10-2015 21:00:00)
 void
 
-repositories()
-path: /repo1
-description: description1
-activity: 0
-	no files
-	G1 Group 1 activity: 0
-	G3 Group 3 activity: 0
+getUserViews(U1)
+P11, Discovering the work of Isaac Newton, description1, views(2)
+P12, The Last Magician, description2, views(2)
+P13, Newton's Third Law, description3, views(2)
+P21, Fundamental ideas in chemistry, description1, views(1)
+P23, Chemistry for the Biosciences, description3, views(1)
+P22, The mole, description2, views(1)
+P31, Pablo Picasso paintings, description1, views(1)
+P33, Da Vinci: The Lost Treasure, description3, views(1)
+P32, Diego Velázquez: Las Meninas, description2, views(1)
 
+getUserViews(U2)
+P11, Discovering the work of Isaac Newton, description1, views(2)
+P12, The Last Magician, description2, views(2)
+P13, Newton's Third Law, description3, views(2)
 
-path: /repo2
-description: description2
-activity: 0
-	no files
-	G4 Group 4 activity: 0
-
-
-path: /repo4
-description: description4
-activity: 0
-	no files
-
-path: /repo5
-description: description5
-activity: 0
-	no files
-
-
-# ERROR
-commit(99999, 1, U1, 14-10-2014 15:30:00, /src/HelloWorld.java, public class HelloWorld)
-ERROR: Repository not found
-
-# ERROR
-commit(1, 1, XXXXX1, 14-10-2014 15:30:00, /src/HelloWorld.java, public class HelloWorld)
-ERROR: User not found
-
-# ERROR  B3 - Repo 1
-commit(1, 1, B3, 14-10-2014 15:30:00, /src/HelloWorld.java, public class HelloWorld)
-ERROR: No privileges on this repo
-
-# ERROR  A16 - Repo 1
-commit(1, 333, A16, 14-10-2014 15:30:00, /src/HelloWorld.java, public class HelloWorld)
-ERROR: No privileges on this repo
-
-# ERROR  J2 - Repo 1
-commit(1, 333, J2, 14-10-2014 15:30:00, /src/HelloWorld.java, public class HelloWorld)
-ERROR: No privileges on this repo
-
-
-commit(1, 333, U1, 14-10-2014 15:30:00, /src/HelloWorld.java, public class HelloWorld (333))
+rateProgram(CH1, P13, 5)
 void
-commit(1, 333, U1, 15-10-2014 15:30:00, /src/Main.java, public class Main (333))
+rateProgram(CH1, P13, 5)
 void
-commit(1, 333, A36, 15-10-2014 15:30:00, /src/Test.java, public class Test (333))
+rateProgram(CH1, P13, 5)
 void
-commit(1, 333, A36, 15-10-2014 15:30:00, /src/ApiHelper.java, public class ApiHelper (333))
+rateProgram(CH1, P13, 5)
 void
-commit(1, 333, A36, 15-10-2014 15:30:00, /src/DBUtils.java, public class DBUtils (333))
+program(CH1, P13)
+P13, Newton's Third Law, description3 rating(5.0):5 5 5 5 
+
+rateProgram(CH1, P11, 5)
 void
 
-commit(1, 334, U1, 14-10-2014 15:35:00, /src/HelloWorld.java, public class HelloWorld // msg1 (334))
+program(CH1, P11)
+P11, Discovering the work of Isaac Newton, description1 rating(5.0):5 
+
+rateProgram(CH1, P11, 0)
 void
-commit(1, 334, U1, 15-10-2014 15:35:00, /src/Main.java, public class Main // msg1 (334))
+program(CH1, P11)
+P11, Discovering the work of Isaac Newton, description1 rating(2.5):5 0 
+
+rateProgram(CH1, P11, 1)
+void
+program(CH1, P11)
+P11, Discovering the work of Isaac Newton, description1 rating(2.0):5 0 1 
+
+rateProgram(CH1, P11, 1)
+void
+program(CH1, P11)
+P11, Discovering the work of Isaac Newton, description1 rating(1.75):5 0 1 1 
+
+rateProgram(CH1, P11, 2)
+void
+program(CH1, P11)
+P11, Discovering the work of Isaac Newton, description1 rating(1.8):5 0 1 1 2 
+
+topRating()
+P13, Newton's Third Law, description3 rating(5.0):5 5 5 5 
+
+rateProgram(CH2, P21, 4)
+void
+rateProgram(CH2, P22, 1)
+void
+rateProgram(CH2, P23, 2)
 void
 
-commit(1, 335, U1, 14-10-2014 15:40:00, /src/HelloWorld.java, public class HelloWorld // msg2 (335))
-void
-commit(1, 335, U1, 15-10-2014 15:40:00, /src/Main.java, public class Main // msg2 (335))
-void
-
-# error
-commit(1, 333, U1, 15-10-2014 15:40:00, /src/Main.java, public class Main // msg2)
-ERROR: Revision already exists
-
-
-# Repo 2
-
-# ERROR A16 - Repo 2
-commit(2, 100, A16, 15-10-2014 15:40:00, /src/JTree.java, public class Main // msg a16)
-ERROR: No privileges on this repo
-
-# ERROR A36 - Repo 2
-commit(2, 100, A36, 15-10-2014 15:40:00, /src/JTree.java, public class Main // msg a36)
-ERROR: No privileges on this repo
-
-# ERROR U1 - Repo 2
-commit(2, 100, U1, 15-10-2014 15:40:00, /src/JTree.java, public class Main // msg u1)
-ERROR: No privileges on this repo
-
-commit(2, 100, B3, 15-10-2014 15:40:00, /src/JTree.java, public class Main // msg B3)
-void
+programs(CH1)
+P11, Discovering the work of Isaac Newton, description1 rating(1.8):5 0 1 1 2 
+P12, The Last Magician, description2 rating(0.0):
+P13, Newton's Third Law, description3 rating(5.0):5 5 5 5 
+programs(CH2)
+P21, Fundamental ideas in chemistry, description1 rating(4.0):4 
+P22, The mole, description2 rating(1.0):1 
+P23, Chemistry for the Biosciences, description3 rating(2.0):2 
 
 
-mostActiveRepository()
-path: /repo1
-description: description1
-activity: 9
-	filePath:/src/HelloWorld.java
-	333 public class HelloWorld (333) U1 
-	334 public class HelloWorld // msg1 (334) U1 
-	335 public class HelloWorld // msg2 (335) U1 
-	filePath:/src/Main.java
-	333 public class Main (333) U1 
-	334 public class Main // msg1 (334) U1 
-	335 public class Main // msg2 (335) U1 
-	filePath:/src/Test.java
-	333 public class Test (333) A36 
-	filePath:/src/ApiHelper.java
-	333 public class ApiHelper (333) A36 
-	filePath:/src/DBUtils.java
-	333 public class DBUtils (333) A36 
+getTop10Programs()
+P13, Newton's Third Law, description3 rating(5.0):5 5 5 5 
+P21, Fundamental ideas in chemistry, description1 rating(4.0):4 
+P23, Chemistry for the Biosciences, description3 rating(2.0):2 
+P11, Discovering the work of Isaac Newton, description1 rating(1.8):5 0 1 1 2 
+P22, The mole, description2 rating(1.0):1 
 
-	G1 Group 1 activity: 6
-	G3 Group 3 activity: 3
-
-
-mostActiveGroup()
-G1 Group 1 activity: 6
-
-
-
-# ERROR
-getFile(1, 9999, /src/Main.java)
-ERROR: Revision not found
-
-getFile(1, 333, /src/Main.java)
-333 public class Main (333) U1 
-
-getFile(1, 334, /src/Main.java)
-334 public class Main // msg1 (334) U1 
-
-getFile(1, 335, /src/Main.java)
-335 public class Main // msg2 (335) U1 
-
-getFile(1, 333, /src/HelloWorld.java)
-333 public class HelloWorld (333) U1 
-
-getFile(1, 334, /src/HelloWorld.java)
-334 public class HelloWorld // msg1 (334) U1 
-
-getFile(1, 335, /src/HelloWorld.java)
-335 public class HelloWorld // msg2 (335) U1 
-
-
-checkout(1, 333)
-333 public class HelloWorld (333) U1 
-333 public class Main (333) U1 
-333 public class Test (333) A36 
-333 public class ApiHelper (333) A36 
-333 public class DBUtils (333) A36 
-
-checkout(1, 334)
-334 public class HelloWorld // msg1 (334) U1 
-334 public class Main // msg1 (334) U1 
-333 public class Test (333) A36 
-333 public class ApiHelper (333) A36 
-333 public class DBUtils (333) A36 
-
-checkout(1, 335)
-335 public class HelloWorld // msg2 (335) U1 
-335 public class Main // msg2 (335) U1 
-333 public class Test (333) A36 
-333 public class ApiHelper (333) A36 
-333 public class DBUtils (333) A36 
-
-checkout(2, 100)
-100 public class Main // msg B3 B3 
-
+getChannelTop10Programs(CH2)
+P21, Fundamental ideas in chemistry, description1 rating(4.0):4 
+P23, Chemistry for the Biosciences, description3 rating(2.0):2 
+P22, The mole, description2 rating(1.0):1 

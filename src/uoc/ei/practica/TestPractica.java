@@ -25,7 +25,7 @@ public class TestPractica  extends Test
    {
       Test p;
       {
-         p = new TestPractica("uoc.ei.practica.SVNManagerImpl", args);
+         p = new TestPractica("uoc.ei.practica.TVUOCManagerImpl", args);
          p.execute();
       }
    }

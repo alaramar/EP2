@@ -24,12 +24,12 @@ public class User extends IdentifiedObject {
 	/**
 	 * llista encadenada de visualitzacions d'un usuari
 	 */
-	private LlistaEncadenada<Visit> visits;
+	private LlistaEncadenada<View> views;
 
 	public User(String idUser, String email, String password) {
 		super(idUser);
 		this.update(email, password);
-		this.visits=new LlistaEncadenada<Visit>();
+		this.views=new LlistaEncadenada<View>();
 	}
 
 	/**
@@ -67,16 +67,16 @@ public class User extends IdentifiedObject {
 	 * mètode que afegeix un grup a un usuari
 	 * @param g
 	 */
-	public void addVisit(Visit visits) {
-		this.visits.afegirAlFinal(visits);
+	public void addVisit(View visits) {
+		this.views.afegirAlFinal(visits);
 	}
 
 	/**
 	 * mètode que retorna un iterador de grups de l'usuari
 	 * @return
 	 */
-	public Iterador<Visit> groups() {
-		return this.visits.elements();
+	public Iterador<View> groups() {
+		return this.views.elements();
 	}
 
 	/**
@@ -85,6 +85,15 @@ public class User extends IdentifiedObject {
 	 */
 	public String getIdUser() {
 		return this.identifier;
+	}
+
+	public void addView(Program p) {
+		this.views.afegirAlFinal(new View(p));
+	}
+
+	public Iterador<View> views() {
+		// TODO Auto-generated method stub
+		return this.views.elements();
 	}
 
 }

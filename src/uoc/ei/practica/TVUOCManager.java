@@ -1,6 +1,5 @@
 package uoc.ei.practica;
 
-import java.nio.channels.Channel;
 import java.util.Date;
 
 import uoc.ei.tads.Iterador;
@@ -8,10 +7,11 @@ import uoc.ei.tads.Iterador;
 /** 
  * Definició del TAD de gestió de repositoris SVN
  */
-public interface TVOUCManager {
+public interface TVUOCManager {
 	
-	public static final int C= 500;
+	public static final int C= 50;
 	public static final int TOP_10 = 10;
+	public static final int PC = 100; 
 
 	
 	/*
@@ -55,11 +55,11 @@ public interface TVOUCManager {
 	 * @post Si existeix el canal idChanel, el programa idProgram, i l'usuari idUser, les visualitzacions 
 	 * de l'usuari idUser seran les mateixes més una nova visualització amb les dades indicades. En cas contrari retorna error.
 	 */
-	public void registerVisit(String idChannel, String idProgram, String idUser, Date dateTime) throws EIException;
+	public void registerView(String idChannel, String idProgram, String idUser, Date dateTime) throws EIException;
 	
 
 	/**
-	 * @pre  existeix un canal amb el codi idChannel, un programa amb idProgram dins del canal idChanel
+	 * @pre  existeix un canal amb el codi idChannel, un programa amb idProgram dins del canal idChanel i rating és un valor entre 0 i5
 	 * @post el promig de les valoracions del programa idProgram incorporarà aquesta nova valoració. 
 	 */
 	public void rateProgram(String idChannel, String idProgram, int rating) throws EIException;
@@ -69,26 +69,30 @@ public interface TVOUCManager {
 	 * @pre  existeix un uduari amb codi idUser
 	 * @post retorna un iterador per recórrer les visualitzacions realitzades per l'usuari idUser
 	 */ 
-	public Iterador<Visit> getUserVisit(String idUser);
+	public Iterador<View> getUserViews(String idUser);
 
 	/**
+	 * @throws EIException 
 	 * @pre  cert
-	 * @post retorna un iterador per recórrer els 10 programes més vistos de TvUoc. En cas d'empat a les darreres posicions dels top 10, descarta alguns dels empatats per ajustar-se al límit de 10 programes.
+	 * @post retorna un iterador per recórrer els 10 programes més vistos de TvUoc. En cas d'empat
+	 *  a les darreres posicions dels top 10, descarta alguns dels empatats per ajustar-se al límit de 10 programes.
 	 */
-	public void getTop10Programs();
+	public Iterador<Program> getTop10Programs() throws EIException;
 	
 	/**
-	 * 	@pre  existeix un canal amb codi idChannel
+	 * 	@throws EIException 
+	 * @pre  existeix un canal amb codi idChannel
 	 *	@post retorna un iterador per recórrer els 10 programes més vistos del canal idChannel. En cas d'empat a les darreres posicions dels top 10, descarta alguns dels empatats per ajustar-se al límit de 10 programes.
 	 */
-	public Iterador<Channel> getChannelTop10Programs(String idChannel);
+	public Iterador<Program> getChannelTop10Programs(String idChannel) throws EIException;
 
 
 	/**
+	 * @throws EIException 
 	 * @pre  cert
 	 * @post retorna el programa més ben valorat, o un d'ells en cas d'empat
 	 */
-	public Program topRating();
+	public Program topRating() throws EIException;
 
 	/**
 	 * mètode que proporciona els usuaris del sistema
@@ -96,9 +100,19 @@ public interface TVOUCManager {
 	public Iterador<User> users() throws EIException;
 	
 	/**
+	 * mètode que proporciona els canals del sistema
+	 */
+	public Iterador<Channel> channels()  throws EIException;
+
+	/**
 	 * mètode que proporciona els programes del sistema
 	 */
-	public Iterador<Program> programs() throws EIException;
+	public Iterador<Program> programs(String idChannel) throws EIException;
+	
+	/**
+	 * mètode que proporciona els programe especificat
+	 */
+	public Program program(String idChannel, String idProgram) throws EIException;
 	
 
 }
