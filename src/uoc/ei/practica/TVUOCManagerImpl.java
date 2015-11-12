@@ -6,6 +6,18 @@ import uoc.ei.tads.Iterador;
 
 public class TVUOCManagerImpl implements TVUOCManager {
 
+	/**
+	 * llista encadenada d' usuaris
+	 * 
+	 */
+	private IdentifiedList<User> users;
+	
+	public TVUOCManagerImpl() {
+		this.users= new IdentifiedList<User>();
+
+	}
+	
+	
 	@Override
 	public void addUser(String idUser, String email, String password) throws EIException {
 		// TODO Auto-generated method stub
