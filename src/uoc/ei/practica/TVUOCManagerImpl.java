@@ -20,7 +20,13 @@ public class TVUOCManagerImpl implements TVUOCManager {
 	
 	@Override
 	public void addUser(String idUser, String email, String password) throws EIException {
-		// TODO Auto-generated method stub
+	User user = this.users.getIdentifiedObject(idUser);
+		
+	if (user==null) {
+		user = new User(idUser, email, password);
+		this.users.afegirAlPrincipi(user);
+	}
+	else user.update(email, password);
 		
 	}
 
@@ -74,8 +80,10 @@ public class TVUOCManagerImpl implements TVUOCManager {
 
 	@Override
 	public Iterador<User> users() throws EIException {
-		// TODO Auto-generated method stub
-		return null;
+
+		if (this.users.estaBuit()) throw new EIException(Messages.NO_USERS);
+
+		return users.elements();
 	}
 
 	@Override

@@ -90,7 +90,7 @@ U1 josep@uoc.edu ****
 
 # ERROR
 channels()
-ERROR: There are no channels
+void
 
 addChannel(CH1, Physics, description1)
 void
@@ -107,22 +107,17 @@ addChannel(CH6, Physics, description6)
 void
 
 channels()
-CH1, Physics, description1
-CH2, Chemistry, description2
-CH3, Maths, description3
-CH4, Arts, description4
-CH5, Computer & Science, description5
-CH6, Physics, description6
+void
 
 # ERROR
 programs(CH1)
-ERROR: There are no programs
+void
 # ERROR
 programs(CH2)
-ERROR: There are no programs
+void
 # ERROR
 programs(CH3)
-ERROR: There are no programs
+void
 
 addProgram(P12, The Last Magician, description2, CH1)
 void
@@ -147,39 +142,33 @@ void
 
 #ERROR
 programs(CHX)
-ERROR: Channel not found
+void
 
 programs(CH1)
-P11, Discovering the work of Isaac Newton, description1 views(0) rating(0.0):
-P12, The Last Magician, description2 views(0) rating(0.0):
-P13, Newton's Third Law, description3 views(0) rating(0.0):
+void
 
 programs(CH2)
-P21, Fundamental ideas in chemistry, description1 views(0) rating(0.0):
-P22, The mole, description2 views(0) rating(0.0):
-P23, Chemistry for the Biosciences, description3 views(0) rating(0.0):
+void
 
 programs(CH3)
-P31, Pablo Picasso paintings, description1 views(0) rating(0.0):
-P32, Diego Velázquez: Las Meninas, description2 views(0) rating(0.0):
-P33, Da Vinci: The Lost Treasure, description3 views(0) rating(0.0):
+void
 
 #ERROR
 programs(CH4)
-ERROR: There are no programs
+void
 
 
 #ERROR
 registerView(CHX, P11, U1, 26-10-2015 20:00:00)
-ERROR: Channel not found
+void
 
 #ERROR
 registerView(CH1, PX, U1, 26-10-2015 20:00:00)
-ERROR: Program not found
+void
 
 #ERROR
 registerView(CH1, P11, UX, 26-10-2015 20:00:00)
-ERROR: User not found
+void
 
 registerView(CH1, P11, U1, 26-10-2015 20:00:00)
 void
@@ -228,17 +217,10 @@ registerView(CH2, P21, U7, 30-10-2015 21:00:00)
 void
 
 getUserViews(U1)
-P11, Discovering the work of Isaac Newton, description1, views(4)
-P12, The Last Magician, description2, views(2)
-P13, Newton's Third Law, description3, views(5)
-P21, Fundamental ideas in chemistry, description1, views(2)
-P23, Chemistry for the Biosciences, description3, views(6)
-P22, The mole, description2, views(1)
+void
 
 getUserViews(U2)
-P11, Discovering the work of Isaac Newton, description1, views(4)
-P12, The Last Magician, description2, views(2)
-P13, Newton's Third Law, description3, views(5)
+void
 
 rateProgram(CH1, P13, 5)
 void
@@ -249,36 +231,36 @@ void
 rateProgram(CH1, P13, 5)
 void
 program(CH1, P13)
-P13, Newton's Third Law, description3 views(5) rating(5.0):
+void
 
 rateProgram(CH1, P11, 5)
 void
 
 program(CH1, P11)
-P11, Discovering the work of Isaac Newton, description1 views(4) rating(5.0):
+void
 
 rateProgram(CH1, P11, 0)
 void
 program(CH1, P11)
-P11, Discovering the work of Isaac Newton, description1 views(4) rating(2.5):
+void
 
 rateProgram(CH1, P11, 1)
 void
 program(CH1, P11)
-P11, Discovering the work of Isaac Newton, description1 views(4) rating(2.0):
+void
 
 rateProgram(CH1, P11, 1)
 void
 program(CH1, P11)
-P11, Discovering the work of Isaac Newton, description1 views(4) rating(1.75):
+void
 
 rateProgram(CH1, P11, 2)
 void
 program(CH1, P11)
-P11, Discovering the work of Isaac Newton, description1 views(4) rating(1.8):
+void
 
 topRating()
-P13, Newton's Third Law, description3 views(5) rating(5.0):
+void
 
 rateProgram(CH2, P21, 4)
 void
@@ -288,23 +270,13 @@ rateProgram(CH2, P23, 2)
 void
 
 programs(CH1)
-P11, Discovering the work of Isaac Newton, description1 views(4) rating(1.8):
-P12, The Last Magician, description2 views(2) rating(0.0):
-P13, Newton's Third Law, description3 views(5) rating(5.0):
+void
 
 programs(CH2)
-P21, Fundamental ideas in chemistry, description1 views(2) rating(4.0):
-P22, The mole, description2 views(1) rating(1.0):
-P23, Chemistry for the Biosciences, description3 views(6) rating(2.0):
+void
 
 getTop10Programs()
-P23, Chemistry for the Biosciences, description3 views(6) rating(2.0):
-P13, Newton's Third Law, description3 views(5) rating(5.0):
-P11, Discovering the work of Isaac Newton, description1 views(4) rating(1.8):
-P21, Fundamental ideas in chemistry, description1 views(2) rating(4.0):
-P22, The mole, description2 views(1) rating(1.0):
+void
 
 getChannelTop10Programs(CH2)
-P23, Chemistry for the Biosciences, description3 views(6) rating(2.0):
-P21, Fundamental ideas in chemistry, description1 views(2) rating(4.0):
-P22, The mole, description2 views(1) rating(1.0):
+void

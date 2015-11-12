@@ -42,7 +42,7 @@ public class User extends IdentifiedObject {
 	 */
 	public String toString() {
 		StringBuffer sb = new StringBuffer();
-		sb.append(this.idUser).append(" ").append(this.email).append(" ").append(this.password).append(" ").append(Messages.LS);
+		sb.append(super.getIdentifier()).append(" ").append(this.email).append(" ").append(this.password).append(" ").append(Messages.LS);
 
 			
 		return sb.toString();
