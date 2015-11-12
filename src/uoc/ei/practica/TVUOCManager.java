@@ -36,10 +36,6 @@ public interface TVUOCManager {
 	 * @pre no existeix cap canal amb el codi idChannel
 	 * @post els canals seran els mateixos més un nou canal amb les dades indicades
 	 * 
-	 * @param idChannel
-	 * @param name
-	 * @param description
-	 * @throws EIException
 	 */
 	public void addChannel(String idChannel, String name, String description) throws EIException;
 	
@@ -72,7 +68,6 @@ public interface TVUOCManager {
 	public Iterador<View> getUserViews(String idUser);
 
 	/**
-	 * @throws EIException 
 	 * @pre  cert
 	 * @post retorna un iterador per recórrer els 10 programes més vistos de TvUoc. En cas d'empat
 	 *  a les darreres posicions dels top 10, descarta alguns dels empatats per ajustar-se al límit de 10 programes.
@@ -80,7 +75,6 @@ public interface TVUOCManager {
 	public Iterador<Program> getTop10Programs() throws EIException;
 	
 	/**
-	 * 	@throws EIException 
 	 * @pre  existeix un canal amb codi idChannel
 	 *	@post retorna un iterador per recórrer els 10 programes més vistos del canal idChannel. En cas d'empat a les darreres posicions dels top 10, descarta alguns dels empatats per ajustar-se al límit de 10 programes.
 	 */
@@ -88,7 +82,6 @@ public interface TVUOCManager {
 
 
 	/**
-	 * @throws EIException 
 	 * @pre  cert
 	 * @post retorna el programa més ben valorat, o un d'ells en cas d'empat
 	 */

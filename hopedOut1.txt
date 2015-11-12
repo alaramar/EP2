@@ -16,6 +16,19 @@ addUser(U1, joep@uoc.edu, ****)
 void
 addUser(U2, joan@uoc.edu, ****)
 void
+addUser(U3, pere@uoc.edu, ****)
+void
+addUser(U4, achillar@uoc.edu, ****)
+void
+addUser(U5, sanchez@uoc.edu, ****)
+void
+addUser(U6, degana@uoc.edu, ****)
+void
+addUser(U7, alex@uoc.edu, ****)
+void
+addUser(U8, sergio@uoc.edu, ****)
+void
+
 addUser(B3, helenap@uoc.edu, ****)
 void
 addUser(A36, marti@uoc.edu, ****)
@@ -29,6 +42,18 @@ A16 pepmarti@uoc.edu ****
 A36 marti@uoc.edu **** 
 
 B3 helenap@uoc.edu **** 
+
+U8 sergio@uoc.edu **** 
+
+U7 alex@uoc.edu **** 
+
+U6 degana@uoc.edu **** 
+
+U5 sanchez@uoc.edu **** 
+
+U4 achillar@uoc.edu **** 
+
+U3 pere@uoc.edu **** 
 
 U2 joan@uoc.edu **** 
 
@@ -45,6 +70,18 @@ A16 pepmarti@uoc.edu ****
 A36 marti@uoc.edu **** 
 
 B3 helenap@uoc.edu **** 
+
+U8 sergio@uoc.edu **** 
+
+U7 alex@uoc.edu **** 
+
+U6 degana@uoc.edu **** 
+
+U5 sanchez@uoc.edu **** 
+
+U4 achillar@uoc.edu **** 
+
+U3 pere@uoc.edu **** 
 
 U2 joan@uoc.edu **** 
 
@@ -113,19 +150,19 @@ programs(CHX)
 ERROR: Channel not found
 
 programs(CH1)
-P11, Discovering the work of Isaac Newton, description1 rating(0.0):
-P12, The Last Magician, description2 rating(0.0):
-P13, Newton's Third Law, description3 rating(0.0):
+P11, Discovering the work of Isaac Newton, description1 views(0) rating(0.0):
+P12, The Last Magician, description2 views(0) rating(0.0):
+P13, Newton's Third Law, description3 views(0) rating(0.0):
 
 programs(CH2)
-P21, Fundamental ideas in chemistry, description1 rating(0.0):
-P22, The mole, description2 rating(0.0):
-P23, Chemistry for the Biosciences, description3 rating(0.0):
+P21, Fundamental ideas in chemistry, description1 views(0) rating(0.0):
+P22, The mole, description2 views(0) rating(0.0):
+P23, Chemistry for the Biosciences, description3 views(0) rating(0.0):
 
 programs(CH3)
-P31, Pablo Picasso paintings, description1 rating(0.0):
-P32, Diego Velázquez: Las Meninas, description2 rating(0.0):
-P33, Da Vinci: The Lost Treasure, description3 rating(0.0):
+P31, Pablo Picasso paintings, description1 views(0) rating(0.0):
+P32, Diego Velázquez: Las Meninas, description2 views(0) rating(0.0):
+P33, Da Vinci: The Lost Treasure, description3 views(0) rating(0.0):
 
 #ERROR
 programs(CH4)
@@ -156,12 +193,6 @@ registerView(CH2, P23, U1, 30-10-2015 20:00:00)
 void
 registerView(CH2, P22, U1, 04-11-2015 19:00:00)
 void
-registerView(CH3, P31, U1, 16-11-2015 21:00:00)
-void
-registerView(CH3, P33, U1, 20-11-2015 20:00:00)
-void
-registerView(CH3, P32, U1, 26-11-2015 22:00:00)
-void
 
 registerView(CH1, P11, U2, 28-10-2015 20:00:00)
 void
@@ -170,21 +201,44 @@ void
 registerView(CH1, P13, U2, 30-10-2015 21:00:00)
 void
 
+registerView(CH1, P13, U4, 28-10-2015 20:00:00)
+void
+registerView(CH1, P13, U5, 29-10-2015 20:20:00)
+void
+registerView(CH1, P13, U6, 30-10-2015 21:00:00)
+void
+
+registerView(CH2, P23, U4, 28-10-2015 20:00:00)
+void
+registerView(CH2, P23, U5, 29-10-2015 20:20:00)
+void
+registerView(CH2, P23, U6, 30-10-2015 21:00:00)
+void
+registerView(CH2, P23, U7, 30-10-2015 21:00:00)
+void
+registerView(CH2, P23, U8, 30-10-2015 21:00:00)
+void
+
+registerView(CH1, P11, U7, 30-10-2015 21:00:00)
+void
+registerView(CH1, P11, U8, 30-10-2015 21:00:00)
+void
+
+registerView(CH2, P21, U7, 30-10-2015 21:00:00)
+void
+
 getUserViews(U1)
-P11, Discovering the work of Isaac Newton, description1, views(2)
+P11, Discovering the work of Isaac Newton, description1, views(4)
 P12, The Last Magician, description2, views(2)
-P13, Newton's Third Law, description3, views(2)
-P21, Fundamental ideas in chemistry, description1, views(1)
-P23, Chemistry for the Biosciences, description3, views(1)
+P13, Newton's Third Law, description3, views(5)
+P21, Fundamental ideas in chemistry, description1, views(2)
+P23, Chemistry for the Biosciences, description3, views(6)
 P22, The mole, description2, views(1)
-P31, Pablo Picasso paintings, description1, views(1)
-P33, Da Vinci: The Lost Treasure, description3, views(1)
-P32, Diego Velázquez: Las Meninas, description2, views(1)
 
 getUserViews(U2)
-P11, Discovering the work of Isaac Newton, description1, views(2)
+P11, Discovering the work of Isaac Newton, description1, views(4)
 P12, The Last Magician, description2, views(2)
-P13, Newton's Third Law, description3, views(2)
+P13, Newton's Third Law, description3, views(5)
 
 rateProgram(CH1, P13, 5)
 void
@@ -195,36 +249,36 @@ void
 rateProgram(CH1, P13, 5)
 void
 program(CH1, P13)
-P13, Newton's Third Law, description3 rating(5.0):
+P13, Newton's Third Law, description3 views(5) rating(5.0):
 
 rateProgram(CH1, P11, 5)
 void
 
 program(CH1, P11)
-P11, Discovering the work of Isaac Newton, description1 rating(5.0):
+P11, Discovering the work of Isaac Newton, description1 views(4) rating(5.0):
 
 rateProgram(CH1, P11, 0)
 void
 program(CH1, P11)
-P11, Discovering the work of Isaac Newton, description1 rating(2.5):
+P11, Discovering the work of Isaac Newton, description1 views(4) rating(2.5):
 
 rateProgram(CH1, P11, 1)
 void
 program(CH1, P11)
-P11, Discovering the work of Isaac Newton, description1 rating(2.0):
+P11, Discovering the work of Isaac Newton, description1 views(4) rating(2.0):
 
 rateProgram(CH1, P11, 1)
 void
 program(CH1, P11)
-P11, Discovering the work of Isaac Newton, description1 rating(1.75):
+P11, Discovering the work of Isaac Newton, description1 views(4) rating(1.75):
 
 rateProgram(CH1, P11, 2)
 void
 program(CH1, P11)
-P11, Discovering the work of Isaac Newton, description1 rating(1.8):
+P11, Discovering the work of Isaac Newton, description1 views(4) rating(1.8):
 
 topRating()
-P13, Newton's Third Law, description3 rating(5.0):
+P13, Newton's Third Law, description3 views(5) rating(5.0):
 
 rateProgram(CH2, P21, 4)
 void
@@ -234,23 +288,23 @@ rateProgram(CH2, P23, 2)
 void
 
 programs(CH1)
-P11, Discovering the work of Isaac Newton, description1 rating(1.8):
-P12, The Last Magician, description2 rating(0.0):
-P13, Newton's Third Law, description3 rating(5.0):
-programs(CH2)
-P21, Fundamental ideas in chemistry, description1 rating(4.0):
-P22, The mole, description2 rating(1.0):
-P23, Chemistry for the Biosciences, description3 rating(2.0):
+P11, Discovering the work of Isaac Newton, description1 views(4) rating(1.8):
+P12, The Last Magician, description2 views(2) rating(0.0):
+P13, Newton's Third Law, description3 views(5) rating(5.0):
 
+programs(CH2)
+P21, Fundamental ideas in chemistry, description1 views(2) rating(4.0):
+P22, The mole, description2 views(1) rating(1.0):
+P23, Chemistry for the Biosciences, description3 views(6) rating(2.0):
 
 getTop10Programs()
-P13, Newton's Third Law, description3 rating(5.0):
-P21, Fundamental ideas in chemistry, description1 rating(4.0):
-P23, Chemistry for the Biosciences, description3 rating(2.0):
-P11, Discovering the work of Isaac Newton, description1 rating(1.8):
-P22, The mole, description2 rating(1.0):
+P23, Chemistry for the Biosciences, description3 views(6) rating(2.0):
+P13, Newton's Third Law, description3 views(5) rating(5.0):
+P11, Discovering the work of Isaac Newton, description1 views(4) rating(1.8):
+P21, Fundamental ideas in chemistry, description1 views(2) rating(4.0):
+P22, The mole, description2 views(1) rating(1.0):
 
 getChannelTop10Programs(CH2)
-P21, Fundamental ideas in chemistry, description1 rating(4.0):
-P23, Chemistry for the Biosciences, description3 rating(2.0):
-P22, The mole, description2 rating(1.0):
+P23, Chemistry for the Biosciences, description3 views(6) rating(2.0):
+P21, Fundamental ideas in chemistry, description1 views(2) rating(4.0):
+P22, The mole, description2 views(1) rating(1.0):
